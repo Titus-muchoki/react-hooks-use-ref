@@ -6,11 +6,19 @@ function Ticker() {
   const [color, setColor] = useState("black");
 
   useEffect(() => {
-    const id = setInterval(() => setPrice(makeRandomNumber), 1000);
-    return function () {
-      clearInterval(id);
-    };
-  }, []);
+    if(price > prevPrice){
+      setColor("green");
+    }else if(price < prevPrice){
+      setColor("red");
+    }else{
+      setColor("black");
+    }
+  },[price]);
+  //   const id = setInterval(() => setPrice(makeRandomNumber), 1000);
+  //   return function () {
+  //     clearInterval(id);
+  //   };
+  // }, []);
 
   return (
     <div>

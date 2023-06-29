@@ -4,6 +4,7 @@ import { makeRandomNumber } from "../utils";
 function Ticker() {
   const [price, setPrice] = useState(0);
   const [color, setColor] = useState("black");
+  
   const prevPriceRef = useRef(price);
 
   useEffect(() => {
